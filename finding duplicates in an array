@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Duplicates {
+
+    public ArrayList<Integer> duplicates(int[] arr){
+        ArrayList<Integer> duplicates  = new ArrayList<Integer>();
+
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i+1; j < arr.length; j++){
+                if(arr[i] == arr[j]){
+                    duplicates.add(arr[i]);
+                }
+            }
+        }
+        return duplicates;
+    }
+
+    public HashMap<Integer, Integer> dup(int[] arr){
+        HashMap<Integer, Integer> res = new HashMap<Integer, Integer>();
+
+        for(int i = 0; i < arr.length; i++){
+            int curr = arr[i];
+
+            if(!res.containsKey(curr)){
+                res.put(curr, 0);
+            }
+
+            if(res.containsKey(curr)){
+                res.put(curr, res.get(curr)+1);
+            }
+
+
+        }
+
+        for(Map.Entry<Integer, Integer> set : res.entrySet()){
+            if(set.getValue() >=2){
+                System.out.println(set.getKey());
+            }
+        }
+
+        return res;
+    }
+}
