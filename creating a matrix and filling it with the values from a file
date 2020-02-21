@@ -12,8 +12,8 @@ public class Exercise {
     public static void main(String[] args) throws FileNotFoundException {
         //add two matrices of the same size
 
-        String fileName = "/Users/simplefoodsmehmet/Desktop/DESKTOP 2-11-/Duke Arrays/CommonWords/data/common.txt";
-
+        String fileName = "fileName"; 
+        
         Scanner sc = new Scanner(new File(fileName));
         Scanner s = new Scanner(System.in);
 
