@@ -1,0 +1,36 @@
+/*
+remove duplicate elements in an array and
+return an array with unique values only
+*/ 
+
+
+import java.util.*; 
+
+public class Exercise {
+	public static void main(String[] args){
+		unique_array_int(new int[] {10,22,10,20,11,22}); 
+	
+	
+	}
+	
+	public static void unique_array_int(int[] arr){
+		System.out.println("Original array : " + Arrays.toString(arr)); 
+		//assume all elements are unique
+		int no_unique = arr.length; 
+		for(int i = 0; i < no_unique; i++){ 
+			for(int j = i+1; i < no_unique; j++){
+				if(arr[i] == arr[j]){ 
+					//move the last unique to duplicate value's place - index j 
+					arr[j] = arr[no_unique-1]; 
+					no_unique--;
+					j--; 
+				}
+			}
+		}
+		
+		int[] result = Arrays.copyOf(arr, no_unique); 
+		System.out.println("Array with unique vals : " + Arrays.toString(result)); 
+	}
+
+}
+		
