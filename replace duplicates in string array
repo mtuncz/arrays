@@ -1,0 +1,33 @@
+
+public class Eercise {
+    public static void main(String[] args) {
+        //unique_array(new int[] {10,22,10,20,11,22});
+        unique_arr(new String[] {"ali", "veli","mike","ali","jorge","mike", " veli"});
+
+    }
+    
+    public static void unique_arr(String[] arr){
+        System.out.println("Original: " + Arrays.toString(arr));
+        int no_unique = arr.length;
+
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = arr[i].replaceAll("\\s", "");
+            //arr[i] = arr[i].trim();
+        }
+        
+        for(int i= 0 ; i < no_unique; i++){
+            for(int j = i+1; j<no_unique; j++){
+                if(arr[i].equals(arr[j])){
+                    arr[j] = arr[no_unique-1];
+                    no_unique--;
+                    j--;
+                }
+            }
+        }
+
+        String[] result = Arrays.copyOf(arr, no_unique);
+        System.out.println("Result: " + Arrays.toString(result));
+
+
+    }
+}
