@@ -1,0 +1,48 @@
+/*
+This program creates and array and fills it with the values
+from a file
+if no value, then the program assigns null to the place in the matrix
+*/ 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        //add two matrices of the same size
+
+        String fileName = "/Users/simplefoodsmehmet/Desktop/DESKTOP 2-11-/Duke Arrays/CommonWords/data/common.txt";
+
+        Scanner sc = new Scanner(new File(fileName));
+        Scanner s = new Scanner(System.in);
+
+        int m,n,c,d;
+
+        System.out.println("Enter rows: ");
+        m = s.nextInt();
+        System.out.println("Enter columns: ");
+        n = s.nextInt();
+
+        String[][] arr = new String[m][n];
+
+        for(c = 0; c < m; c++){
+            for(d = 0 ; d < n; d++){
+                try {
+                    arr[c][d] = sc.next();
+                } catch (Exception e){
+                    arr[c][d] = null;
+                }
+            }
+        }
+
+        for(c = 0; c < m; c++){
+            for(d = 0 ; d < n; d++){
+                System.out.print("[ " +arr[c][d] + " ]" + " ");
+            }
+            System.out.println();
+        }
+
+
+    }
+}
