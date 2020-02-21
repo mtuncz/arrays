@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class Eercise {
+    public static void main(String[] args) {
+        //add two matrices of the same size
+
+        int m, n, c, d;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the row count: ");
+        m = sc.nextInt();
+
+        System.out.println("Enter the columns: ");
+        n = sc.nextInt();
+
+        int[][] arr1 = new int[m][n];
+        int[][] arr2 = new int[m][n];
+        int[][] sum = new int[m][n];
+
+        System.out.println("Enter values for 1st matrix");
+        for(c = 0; c < m; c++){
+            for(d = 0; d < n; d++){
+                arr1[c][d] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter values for 2nd matrix");
+        for(c = 0; c < m; c++){
+            for(d = 0; d < n; d++){
+                arr2[c][d] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Summing values...");
+        for(c = 0 ; c < m; c++){
+            for(d=0; d< n; d++){
+                sum[c][d] = arr1[c][d] + arr2[c][d];
+            }
+        }
+
+        System.out.println("Printing the result");
+        for(c = 0 ; c < m; c++){
+            for(d = 0; d < n; d++){
+                System.out.print(sum[c][d] + "\t");
+            }
+            System.out.println();
+        }
+
+    }
+}
