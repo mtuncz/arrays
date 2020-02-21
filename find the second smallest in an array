@@ -1,0 +1,53 @@
+/*
+This program first goes over the given array and creates a new array with unique values
+then the program sorts the array from smallest to largest
+and gives us the second smaller element in the array
+*/ 
+
+import java.util.*;
+
+public class Eercise {
+    public static void main(String[] args) {
+        int[] my_array = {
+                10789, 2035, 1899, 1456, 2013,
+                1458, 2458, 1254, 1472, 2365,
+                1456, 2165, 1254, 1457, 2456};
+        int secondLargest = secondSmallest(my_array);
+        System.out.println(secondLargest);
+
+    }
+
+    public static int secondSmallest(int[] arr){
+        System.out.println("Original: " + Arrays.toString(arr));
+        int[] test = unique(arr);
+        for(int i = 0; i < test.length-1; i++){
+            for(int j = i+1; j< test.length;j++){
+                if(test[j]<test[i]){
+                    int temp = test[i];
+                    test[i] = test[j];
+                    test[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("Modified arr: " + Arrays.toString(test));
+        return test[1];
+    }
+
+    public static int[] unique(int[] arr){
+        int no_unique = arr.length;
+        for(int i = 0; i < no_unique; i++){
+            for(int j = i+1; j<no_unique; j++){
+                if(arr[i] == arr[j]){
+                    arr[j] = arr[no_unique-1];
+                    no_unique--;
+                    j--;
+                }
+            }
+        }
+
+        int[] res = Arrays.copyOf(arr,no_unique);
+
+        return res;
+    }
+}
