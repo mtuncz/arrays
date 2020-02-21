@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Eercise {
+    public static void main(String[] args) {
+        int[] my_array = {
+                10789, 2035, 1899, 1456, 2013,
+                1458, 2458, 1254, 1472, 2365,
+                1456, 2165, 1457, 2456};
+        int secondLargest = secondLargest(my_array);
+        System.out.println(secondLargest);
+
+    }
+
+    public static int secondLargest(int[] arr){
+        System.out.println("Original: " + Arrays.toString(arr));
+        for(int i = 0 ; i < arr.length-1; i++){
+            for(int j = i+1; j < arr.length; j++){
+                if(arr[j] > arr[i]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("Modified arr: " + Arrays.toString(arr));
+        return arr[1];
+    }
+}
