@@ -1,0 +1,20 @@
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int[] array_nums = {77, 77, 65, 65, 65, 77};
+        System.out.println(contains(array_nums, 60, 65));
+
+
+    }
+
+    public static boolean contains(int[] arr, int num1, int num2){
+        boolean result = true;
+
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] != num1 && arr[i] != num2){
+                result = false;
+            }
+        }
+        return result;
+    }
+
+}
