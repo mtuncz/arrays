@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int nums[] = {1,2,4,5,6};
+        sumOfTwo(nums, 6);
+
+    }
+
+    public static void sumOfTwo(int[] nums, int target){
+        for(int i = 0 ; i < nums.length-1; i++){
+            for(int j =i+1; j < nums.length; j++){
+                if(nums[i] + nums[j] == target){
+                    System.out.println("Match found: " + nums[i] + " and " + nums[j]);
+                    System.out.println("Indexes are: " + i + " and " + j);
+                    System.out.println();
+                }
+
+            }
+        }
+    }
+
+
+}
