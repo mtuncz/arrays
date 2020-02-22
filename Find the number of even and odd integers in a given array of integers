@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int[] arr = {5,7,2,4,9};
+        System.out.println("Original Array: " + Arrays.toString(arr));
+
+        int countOfEven = 0;
+        int countOfOdd = 0;
+
+        ArrayList<Integer> evens = new ArrayList<>();
+        ArrayList<Integer> odds = new ArrayList<>();
+
+        for(int i : arr){
+            if(i % 2 == 0){
+                countOfEven++;
+                evens.add(i);
+            } else {
+                countOfOdd++;
+                odds.add(i);
+            }
+        }
+
+
+        System.out.println("Total even count : " + countOfEven + " And evens are\n" + evens);
+        System.out.println("Total odd count: " + countOfOdd + " and odds are\n" + odds);
+
+
+
+    }
+}
