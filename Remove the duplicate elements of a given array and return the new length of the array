@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Eercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int nums[] = {20, 20, 30, 40, 50, 50, 50};
+        System.out.println(removeDuplicates(nums));
+
+
+    }
+
+    public static int removeDuplicates(int[] arr){
+        int no_unique = arr.length;
+
+        for(int i = 0; i < no_unique; i++){
+            for(int j = i+1; j < no_unique; j++){
+                if(arr[i] == arr[j]){
+                    arr[j] = arr[no_unique-1];
+                    j--;
+                    no_unique--;
+                }
+            }
+        }
+
+        int[] res = Arrays.copyOf(arr, no_unique);
+        System.out.println("Unique: " + Arrays.toString(res));
+        return res.length;
+    }
+
+    public static int array_sort(int[] nums){
+        int index = 1;
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] != nums[index-1]){
+                nums[index++] = nums[i];
+            }
+        }
+
+        return index;
+    }
+}
