@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int nums[] = {-45,6,3,-44,-1, -42};
+        Arrays.sort(nums);
+
+        int consIdx = 1;
+        for(int i = 0; i < nums.length-1; i++){
+            if(nums[i] + 1 == nums[i+1]){
+                consIdx++;
+            }
+        }
+
+        System.out.println(consIdx);
+        int[] res = Arrays.copyOf(nums, consIdx);
+        System.out.println(Arrays.toString(res));
+
+
+    }
+
+
+}
