@@ -1,0 +1,22 @@
+public class Exercise {
+    public static void main(String[] args) {
+        int[] arr = {2, 7, 4, -5, 11, 5, 20};
+        int[] arr2 = {14, -15, 9, 16, 25, 45, 12, 8};
+
+      
+        pairsDiff(arr, 3);
+
+
+    }
+
+
+    public static void pairsDiff(int[] arr, int k){
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i+1; j < arr.length; j++){
+                if(Math.abs(arr[i] - arr[j]) == k){
+                    System.out.println("Found match: " + arr[i] + " " + arr[j]);
+                }
+            }
+        }
+    }
+}
