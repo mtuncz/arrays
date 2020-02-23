@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int[] input = {1, -2, 0, 5, -1, -4, 45,1,8,23,0,45,78,4,1,-23};
+        System.out.println(sum(input, 10));
+
+
+    }
+
+    public static List<List<Integer>> sum(int[] nums, int target){
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+        for(int i = 0; i < nums.length; i++){
+            for(int k = i+1; k < nums.length; k++){
+                for(int j = k+1; j < nums.length; j++){
+                    if(i!=k && k!=j && i!=j && (nums[i] + nums[k] + nums[j] == target)){
+                        ArrayList<Integer> inner_list = new ArrayList<Integer>();
+                        inner_list.add(nums[i]);
+                        inner_list.add(nums[k]);
+                        inner_list.add(nums[j]);
+                        Collections.sort(inner_list);
+                        result.add(inner_list);
+                    }
+                }
+            }
+        }
+
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        for(List<Integer> i : result){
+            if(!res.contains(i)){
+                res.add(i);
+            }
+        }
+        return res;
+    }
+}
