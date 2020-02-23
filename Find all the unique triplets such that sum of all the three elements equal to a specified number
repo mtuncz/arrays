@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int[] input = {1, -2, 0, 5, -1, -4};
+        System.out.println(sum(input, 2));
+
+
+    }
+
+    public static List<List<Integer>> sum(int[] nums, int target){
+        List<List<Integer>> my_list = new ArrayList<List<Integer>>();
+
+        for(int i = 0; i< nums.length; i++){
+            for(int j = i; j < nums.length; j++){
+                for(int k  = j ; k < nums.length; k++){
+                    if(i != j && j != k && i != k && (nums[i] + nums[j] + nums[k] == target)){
+                        List<Integer> inner_list = new ArrayList<Integer>(3);
+                        inner_list.add(nums[i]);
+                        inner_list.add(nums[k]);
+                        inner_list.add(nums[j]);
+                        my_list.add(inner_list);
+                    }
+                }
+            }
+        }
+        return my_list;
+    }
+}
