@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int arr[] = {5, 7, -8, 5, 14, 1};
+        System.out.println(Arrays.toString(small(arr)));
+
+    }
+
+    public static int[] small(int[] arr){
+        int[] res = new int[2];
+
+        int sm = arr[0];
+        int sml = arr[0];
+        for(int i = 0; i < arr.length; i++){
+            for(int j = i +1; j < arr.length; j++){
+                if(arr[j] < sm){
+                    sm = arr[j];
+                }
+
+                if(arr[j] > sm && arr[j] < arr[i]){
+                    sml = arr[j];
+                }
+            }
+        }
+
+        res[0] = sm;
+        res[1] = sml;
+
+        return res;
+    }
+}
