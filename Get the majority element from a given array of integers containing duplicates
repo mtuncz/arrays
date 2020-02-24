@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int nums[] = { 1, 6, 6, 5, 7, 4, 1, 7, 7, 7, 7, 7, 7, 7, 2 };
+        majority(nums);
+    }
+
+    public static void majority(int[] arr){
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for(int i = 0 ; i < arr.length; i++){
+            int x = arr[i];
+
+            if(!map.containsKey(x)){
+                map.put(x, 0);
+            } else {
+                map.put(x, map.get(x) + 1);
+            }
+        }
+
+        int l = arr.length/2;
+
+        for(Map.Entry<Integer, Integer> set : map.entrySet()){
+            if(set.getValue() >= l ){
+                System.out.println("Majority element: " + set.getKey());
+            }
+        }
+    }
+
+
+
+}
