@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Exercise {
+    public static void main(String[] args) throws FileNotFoundException {
+        int nums[] = {20, 12, 23, 17, 7, 8, 10, 2, 1, 0};
+        System.out.println(Arrays.toString(separate(nums)));
+
+    }
+
+    public static int[] separate(int[] arr){
+        int[] res = new int[arr.length];
+        int j = 0;
+        int k = arr.length-1;
+
+        for(int i = 0; i < res.length; i++){
+            if(arr[i] % 2 == 0){
+                res[j] = arr[i];
+                j++;
+            }
+
+            if(arr[i] % 2 == 1){
+                res[k] = arr[i];
+                k--;
+            }
+        }
+
+        return res;
+        
+    }
+}
